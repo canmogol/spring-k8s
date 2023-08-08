@@ -1,0 +1,16 @@
+# Spring Boot Configurations
+server:
+  port: 8080
+spring:
+  application:
+    name: spring-k8s
+logging:
+  level:
+    root: debug
+
+# See AppConfig.java for details
+app:
+  config:
+    key-value-pairs:
+      key1: value1
+      key2: value2

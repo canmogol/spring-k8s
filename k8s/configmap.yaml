@@ -1,0 +1,29 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: spring-k8s-config
+  namespace: default
+data:
+  # The 'application.yaml' is the name of the key in the ConfigMap,
+  # we reference this in the 'deployment.yaml' file.
+  application.yaml: |-
+    # THIS CONFIGURATION FILE WILL OVERRIDE THE INTERNAL "application.yaml" file. 
+    # Spring Boot Configurations
+    server:
+      # we override the port here
+      port: 80
+    spring:
+      application:
+        name: spring-k8s
+    logging:
+      level:
+        # we override the log level here
+        root: info
+    # Application Configurations - see AppConfig.java for details
+    app:
+      config:
+        logLevel: info
+        key-value-pairs:
+          # we override the key-value-pairs here
+          key1: k8s-configmap-value1
+          key2: k8s-configmap-value2

@@ -16,6 +16,21 @@ spec:
         - name: spring-k8s
           imagePullPolicy: Always
           image: canmogol/spring-k8s:0.0.1
+            # LOGGING_GELF_SERVER sets the Graylog server address,
+            #  Here the 'graylog-external-service' is the service name of the external Graylog server.
+            #  The Kubernetes DNS resolves the IP address of the Graylog server.
+            #  run `kubectl edit cm coredns -n kube-system`
+            #  and add the following lines after with the correct IP address of the Graylog server
+            #  the health section.
+            #         hosts {
+            #           192.168.1.5 graylog-external-service
+            #           fallthrough
+            #         }
+            # You need to restart the coredns pod after the change.
+            # run `kubectl rollout restart -n kube-system deployment/coredns` to restart the coredns
+#          env:
+#            - name: LOGGING_GELF_SERVER
+#              value: "graylog-external-service"
 ---
 apiVersion: v1
 kind: Service

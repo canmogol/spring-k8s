@@ -17,7 +17,6 @@
         <java.version>17</java.version>
         <repackage.classifier/>
         <spring-cloud.version>2022.0.4</spring-cloud.version>
-        <spring-kubernetes.version>3.0.4</spring-kubernetes.version>
     </properties>
     <dependencies>
         <dependency>

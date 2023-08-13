@@ -17,6 +17,7 @@
         <java.version>17</java.version>
         <repackage.classifier/>
         <spring-cloud.version>2022.0.4</spring-cloud.version>
+        <logback-gelf.version>4.0.2</logback-gelf.version>
     </properties>
     <dependencies>
         <dependency>
@@ -30,7 +31,7 @@
         <dependency>
             <groupId>de.siegmar</groupId>
             <artifactId>logback-gelf</artifactId>
-            <version>4.0.2</version>
+            <version>${logback-gelf.version}</version>
         </dependency>
 
 

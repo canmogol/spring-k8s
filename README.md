@@ -36,7 +36,7 @@ Apply the K8S configuration files.
 kubectl apply -f k8s/configmap.yaml
 
 # apply the Application; creates the service, deployment and the pod.
-kubectl apply -f k8s/deployment.yaml
+kubectl apply -f k8s/deployment-configmap.yaml
 ```
 
 ## Config Changes

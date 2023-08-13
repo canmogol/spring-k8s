@@ -29,6 +29,13 @@
             <artifactId>spring-boot-actuator</artifactId>
         </dependency>
         <dependency>
+            <groupId>de.siegmar</groupId>
+            <artifactId>logback-gelf</artifactId>
+            <version>4.0.2</version>
+        </dependency>
+
+
+        <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
             <optional>true</optional>

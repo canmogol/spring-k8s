@@ -20,6 +20,7 @@ public class KeyValuePairsController {
 
     @GetMapping("/")
     public Map<String, String> getPairs() {
+        log.info("getPairs() called, returning: {}", config.getKeyValuePairs());
         return config.getKeyValuePairs();
     }
 

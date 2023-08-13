@@ -5,6 +5,9 @@ spring:
   application:
     name: spring-k8s
 logging:
+  gelf:
+    server: §
+    port: 12201
   level:
     root: debug
 

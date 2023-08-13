@@ -5,7 +5,7 @@ metadata:
   namespace: default
 data:
   # The 'application.yaml' is the name of the key in the ConfigMap,
-  # we reference this in the 'deployment.yaml' file.
+  # we reference this in the 'deployment-configmap.yaml' file.
   application.yaml: |-
     # THIS CONFIGURATION FILE WILL OVERRIDE THE INTERNAL "application.yaml" file. 
     # Spring Boot Configurations

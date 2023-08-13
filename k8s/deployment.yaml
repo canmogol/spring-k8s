@@ -12,30 +12,10 @@ spec:
       labels:
         app: spring-k8s
     spec:
-      volumes:
-        - name: spring-k8s-config
-          configMap:
-            name: spring-k8s-config # Name of the config map, see 'configmap.yaml' file.
-            items:
-              - key: application.yaml # Name of the key in the ConfigMap data section.
-                path: application.yaml # This is the name of the file that will be created in the volume.
       containers:
         - name: spring-k8s
           imagePullPolicy: Always
           image: canmogol/spring-k8s:0.0.1
-          resources:
-            requests: # This is the minimum amount of resources that will be allocated to the container.
-              memory: "128Mi"
-              cpu: "500m"
-            limits: # This is the maximum amount of resources that will be allocated to the container.
-              memory: "128Mi"
-              cpu: "500m"
-          volumeMounts:
-            - mountPath: "/opt/" # The file 'application.yaml' defined in the volume section will be created in this directory.
-              name: spring-k8s-config
-          env:
-            - name: SPRING_CONFIG_LOCATION
-              value: "/opt/application.yaml" # finally, we can reference the application.yaml file here.
 ---
 apiVersion: v1
 kind: Service
@@ -47,6 +27,6 @@ spec:
   ports:
     - name: http
       port: 80
-      targetPort: 80
+      targetPort: 8080
   type: ClusterIP
 ---

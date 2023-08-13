@@ -8,8 +8,17 @@ logging:
   gelf:
     server: gelf-server-service
     port: 12201
+  pattern:
+    level: "%5p [${spring.application.name:},%X{traceId:-},%X{spanId:-}]"
   level:
-    root: debug
+    root: info
+    org.springframework.web.servlet.DispatcherServlet: DEBUG
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
 
 # See AppConfig.java for details
 app:
